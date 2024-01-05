@@ -8,40 +8,68 @@
     </header>
     <!-- navbar endz -->
 
-    <!-- Cars Listing Page -->
-    <div class="mx-auto mt-4 space-y-4 max-w-7xl px-4">
-      <div class="mt-32 flex">
-        <!-- Car side bar -->
-        <div class="shadow border w-64 mr-10 z-30 h-[190px]">
-          <div class="p-5 flex justify-between relative cursor-pointer custom-border-bottom">
-            <h3>Location</h3>
-            <h3 class="capitalize text-blue-400 font-bold">Torronto</h3>
-
-            <!-- Modal Popup -->
-            <!-- <div class="left-56 p-5 absolute border shadow top-1 -m-1 bg-white">
-              <input class="border p-1 rounded" type="text"/>
-              <button class="bg-blue-400 mt-2 w-full rounded text-white p-1">Apply</button>
-            </div> -->
-          </div>
-
-
-          <div class="p-5 flex justify-between relative cursor-pointer custom-border-bottom">
-            <h3>Make</h3>
-            <h3 class="capitalize text-blue-400 font-bold">Hyundai</h3>
-          </div>
-
-          <div class="p-5 flex justify-between relative cursor-pointer">
-            <h3>Price</h3>
-            <h3 class="capitalize text-blue-400 font-bold">Any</h3>
+    <!-- CAR DETAIL PAGE Start-->
+    <div
+      class="mx-auto mt-4 max-w-7xl space-y-4 px-4 xs:px-8 sm:px-10 lg:px-16 pb-16 w-3/5"
+    >
+      <div>
+        <!-- CAR HERO start-->
+        <div class="mt-10">
+          <img
+            src="https://carwow-uk-wp-3.imgix.net/Volvo-XC40-white-scaled.jpg"
+            class="w-full"
+            alt=""
+          />
+          <h1 class="mt-10 text-4xl">Volvo 3XT</h1>
+          <div
+            class="text-slate-500 flex text-lg mt-3 border-b pb-5 justify-between"
+          >
+            <div class="flex">
+              <p class="mr-2">5 seats</p>
+              <p class="mr-2">|</p>
+              <p class="mr-2">67,444 miles</p>
+            </div>
+            <div>
+              <p class="font-bold text-2xl">$25,555</p>
+            </div>
           </div>
         </div>
-
-        <!-- Car side bar end-->
-
-        <!-- Actual Car  -->
-        <!-- Actual Car  end-->
       </div>
+      <!-- CAR HERO end-->
+      <!-- CAR ATTRIBUTES start-->
+      <div class="mr-10 mt-5 border-b pb-5">
+        <div class="flex text-lg mt-2">
+          <p class="rounded text-lime-800 mr-3">✔</p>
+          <p>Leather Interior</p>
+        </div>
+      </div>
+      <!-- CAR ATTRIBUTES End-->
+      <!-- CAR DESCRISPTION start-->
+      <div class="mt-5">
+        <p class="mb-10">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Exercitationem consequuntur, et saepe sequi, ipsum quisquam iste autem
+          quas vel aperiam laboriosam dolorum vero tempore placeat, asperiores
+          alias magni. Nulla, dolores.
+        </p>
+      </div>
+      <!-- CAR DESCRISPTION End-->
+      <!-- CAR CONTACT Start-->
+      <div class="mt-10">
+        <div class="flex w-[600px] justify-between">
+          <input type="text" class="border p-1" placeholder="Name" />
+          <input type="text" class="border p-1" placeholder="Email" />
+          <input type="text" class="border p-1" placeholder="Phone" />
+        </div>
+        <div class="flex mt-4 w-[600px]">
+          <textarea class="border p-1 w-full" placeholder="Message"></textarea>
+        </div>
+        <button class="bg-blue-400 text-white px-10 py-3 rounded mt-4">
+          Submit
+        </button>
+      </div>
+      <!-- CAR CONTACT End-->
     </div>
-    <!-- Cars Listing Page end -->
+    <!-- CAR DETAIL PAGE  End -->
   </div>
 </template>
