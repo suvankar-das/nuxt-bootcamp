@@ -83,3 +83,12 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
 ----
 
 - For car details page , I need to follow this rule /car/porche-5 (/car is fixed porche is dynamic, - is fixed , 5 is dynamic , which is id )
+
+
+-----
+
+- inside navbar component , when clicking , I want to redirect to home page and I can do like this ,
+ ``` js
+ <a href="/" class="text-3xl font-mono">Car Trader</a>
+ ```
+- But the problem is, it will reload the whole page , to fix this ,
