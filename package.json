@@ -13,5 +13,8 @@
     "nuxt": "^3.0.0",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.1.3"
   }
 }
