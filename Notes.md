@@ -29,3 +29,45 @@
 
 
 ----
+
+ - Create a component folder under root directory
+ - Create a component named NavBar.vue
+ - Now , inside Index.vue that resides under page , You can Import like this ,
+
+```vue
+<script setup>
+
+import NavBar from '../components/NavBar.vue';
+
+</script>
+
+<template>
+  <div>
+    <NavBar/>
+  </div>
+</template>
+```
+
+But , vue is strong enough to detect , If You omit script section i.e
+
+``` vue
+<template>
+  <div>
+    <NavBar/>
+  </div>
+</template>
+```
+
+> Nuxt.js simplifies process by offering a feature known as "Nested
+> Routes & Named Views." If you organize components within folders in a
+> specific way, Nuxt.js automatically recognizes the folder structure
+> and generates routes based on folder names.
+
+For example, in a Nuxt.js project, if you have a folder structure like this:
+- components/
+  - users/
+    - UserProfile.vue
+
+When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes it as if it were named `users-UserProfile` (following the folder name and file name) when creating routes or referencing the component. This behavior aids in automatic route generation and component resolution.
+
+**Nuxt.js** automatically recognizes folder-based component structures for route generation and component naming
