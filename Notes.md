@@ -81,3 +81,5 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
    http://localhost:3000/city/kolkata/car
    http://localhost:3000/city/kolkata/car/bmw
 ----
+
+- For car details page , I need to follow this rule /car/porche-5 (/car is fixed porche is dynamic, - is fixed , 5 is dynamic , which is id )
