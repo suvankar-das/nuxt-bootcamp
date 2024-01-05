@@ -71,3 +71,13 @@ For example, in a Nuxt.js project, if you have a folder structure like this:
 When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes it as if it were named `users-UserProfile` (following the folder name and file name) when creating routes or referencing the component. This behavior aids in automatic route generation and component resolution.
 
 **Nuxt.js** automatically recognizes folder-based component structures for route generation and component naming
+
+
+- /city/city_name/car (city_name is dynamic)
+- Also When we change maker , it is also going to change the path like this  /city/city_name/car/maker_name
+- rules /city/:city_name/car/:maker_name
+- To make optional , use [] and to make optional and dynmaic , use [[]]
+- example usage
+   http://localhost:3000/city/kolkata/car
+   http://localhost:3000/city/kolkata/car/bmw
+----
