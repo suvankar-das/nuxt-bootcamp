@@ -76,7 +76,7 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
 - /city/city_name/car (city_name is dynamic)
 - Also When we change maker , it is also going to change the path like this  /city/city_name/car/maker_name
 - rules /city/:city_name/car/:maker_name
-- To make optional , use [] and to make optional and dynmaic , use [[]]
+- To make dynamic , use [] and to make optional and dynmaic , use [[]]
 - example usage
    http://localhost:3000/city/kolkata/car
    http://localhost:3000/city/kolkata/car/bmw
