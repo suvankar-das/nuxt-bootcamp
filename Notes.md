@@ -92,3 +92,16 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
  <a href="/" class="text-3xl font-mono">Car Trader</a>
  ```
 - But the problem is, it will reload the whole page , to fix this ,
+``` js
+ <NuxtLink class="text-3xl font-mono" to="/">Car Trader</NuxtLink>
+```
+
+- In SearchBar.vue ,
+
+### `const cityName = ref("");`
+
+-   **`ref`**: `ref` is a function provided by Vue 3's Composition API for creating reactive references. In this context, it creates a reactive variable named `cityName` and initializes it with an empty string. The reactivity allows changes to `cityName` to automatically trigger updates in the component's rendering.
+
+### `<input type="text" v-model="cityName" :class="isEmptySearch ? 'border border-red-900' : ''" />`
+
+-   **`v-model="cityName"`**: `v-model` is a directive in Vue.js that creates a two-way binding on an input element. In this case, it binds the value of the input field to the `cityName` variable. Any changes to the input field will update the value of `cityName`, and vice versa.
