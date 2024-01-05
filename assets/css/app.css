@@ -138,3 +138,7 @@ table {
 .txt-big-custom {
     font-size: 7rem !important;
 }
+
+.custom-border-bottom{
+    border-bottom: 1px solid black !important;
+}
