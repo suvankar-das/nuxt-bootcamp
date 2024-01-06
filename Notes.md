@@ -266,3 +266,20 @@ definePageMeta({
 -----
 # Error page
 - To add a error page , simply create a file named error.vue at the root
+
+- Now instead of hard-coded 404 and message , I can use useError composable
+
+``` html
+<script setup>
+
+const error = useError();
+
+</script>
+
+<template>
+    <div class="text-center">
+    <h1 class="mb-4 text-6xl font-semibold text-red-500">{{ error.statusCode }}</h1>
+    <p class="mb-4 text-lg text-gray-600">{{ error.message }}</p>
+    <div class="animate-bounce">
+        ...
+```
