@@ -4,14 +4,19 @@ const route = useRoute();
 useHead({
   title: route.params.name.toUpperCase(),
 });
+
+definePageMeta({
+  layout:'central-aligned'
+})
+
 </script>
 
 <template>
   <div>
     <!-- CAR DETAIL PAGE Start-->
-    <div
+    <!-- <div
       class="mx-auto mt-4 max-w-7xl space-y-4 px-4 xs:px-8 sm:px-10 lg:px-16 pb-16 w-3/5"
-    >
+    > -->
       <CarDetailHero />
 
       <CarDetailAttribute />
@@ -19,7 +24,7 @@ useHead({
       <CarDetailDescription />
 
       <CarDetailContact />
-    </div>
+    <!-- </div> -->
     <!-- CAR DETAIL PAGE  End -->
   </div>
 </template>

@@ -23,7 +23,7 @@
 
 
 
-![enter image description here](https://i.ibb.co/ZV9BqgR/image.png)
+![enter image description here](https://i.ibb.co/YWhxDnj/image.png)
 
 
 
@@ -107,7 +107,7 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
 -   **`v-model="cityName"`**: `v-model` is a directive in Vue.js that creates a two-way binding on an input element. In this case, it binds the value of the input field to the `cityName` variable. Any changes to the input field will update the value of `cityName`, and vice versa.
 
 ----
-![enter image description here](https://i.ibb.co/MgWCfww/image.png)
+![enter image description here](https://i.ibb.co/k2zcTQv/image.png)
 - Here In this page th right side of the page will gets changed frequently. i.e If I chnage any parameter like
 - change location or make then different cars will popped up on the right side of that screen.
 
@@ -133,4 +133,81 @@ So what we need to do is change our routing structure so that the frequently chn
 
 ``` html
 <NuxtLayout><NuxtPage></NuxtPage></NuxtLayout>
+```
+
+----
+# Custom layout
+
+
+Now , first look at the structure of the page ,
+In the homepage , I don't have any space ![enter image description here](https://i.ibb.co/84kP4TR/image.png)
+
+But in car listing page , ![enter image description here](https://i.ibb.co/NYtGHXn/image.png) there are white spaces in both side and same for car details page ![enter image description here](https://i.ibb.co/KjdmD7N/image.png)
+
+This is because ,
+
+```html
+<div
+      class="mx-auto mt-4 max-w-7xl space-y-4 px-4 xs:px-8 sm:px-10 lg:px-16 pb-16 w-3/5"
+    >
+</div>
+```
+is used in both pages
+
+
+So create a new layout , here name does not matter at all , I named it `central-aligned.vue`
+
+``` html
+<template>
+  <NavBar/>
+  <div
+    class="mx-auto mt-4 max-w-7xl space-y-4 px-4 xs:px-8 sm:px-10 lg:px-16 pb-16 w-3/5"
+  >
+    <slot />
+  </div>
+</template>
+
+```
+
+Now , in order to use this custom layout , inside script tag of that page,
+``` js
+definePageMeta({
+  layout: "central-aligned",
+});
+```
+
+and remove that div from there , so code now looks like this
+
+``` html
+<script setup>
+const route = useRoute();
+
+useHead({
+  title: route.params.name.toUpperCase(),
+});
+
+definePageMeta({
+  layout:'central-aligned'; // name of the layout page
+})
+
+</script>
+
+<template>
+  <div>
+    <!-- CAR DETAIL PAGE Start-->
+    <!-- <div
+      class="mx-auto mt-4 max-w-7xl space-y-4 px-4 xs:px-8 sm:px-10 lg:px-16 pb-16 w-3/5"
+    > -->
+      <CarDetailHero />
+
+      <CarDetailAttribute />
+
+      <CarDetailDescription />
+
+      <CarDetailContact />
+    <!-- </div> -->
+    <!-- CAR DETAIL PAGE  End -->
+  </div>
+</template>
+
 ```
