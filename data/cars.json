@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "name": "Range Rover Sport",
+        "price": "84,777",
+        "url": "https://www.carhelpcanada.com/wp-content/uploads/2019/12/2020-Range-Rover-Evoque-2.jpg",
+        "seats": 5,
+        "miles": "14,666",
+        "features": [
+            "No Accidents",
+            "Low KM",
+            "Vehicle Detailed",
+            "Leather Interior"
+        ],
+        "description": "The Range Rover Sport combines luxury and performance, offering a comfortable ride and powerful engine options."
+    },
+    {
+        "id": 2,
+        "name": "Rolls Royce Ghost",
+        "price": "455,000",
+        "url": "https://robbreport.com/wp-content/uploads/2021/03/1-5.jpg?w=1000",
+        "seats": 5,
+        "miles": "53,666",
+        "features": [
+            "No Accidents",
+            "Low KM",
+            "Vehicle Detailed",
+            "Leather Interior"
+        ],
+        "description": "The Rolls Royce Ghost epitomizes luxury and craftsmanship, delivering a serene driving experience with advanced technology."
+    },
+    {
+        "id": 3,
+        "name": "Porsche Taycan",
+        "price": "180,434",
+        "url": "https://www.topgear.com/sites/default/files/cars-car/carousel/2021/02/pcgb20_1441_fine.jpg",
+        "seats": 5,
+        "miles": "0",
+        "features": [
+            "No Accidents",
+            "Low KM",
+            "Vehicle Detailed",
+            "Leather Interior"
+        ],
+        "description": "The Porsche Taycan is an all-electric sports car that combines performance and sustainability, offering instant acceleration and cutting-edge features."
+    },
+    {
+        "id": 4,
+        "name": "Tesla Model S",
+        "price": "79,990",
+        "url": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tesla/Model-S/5252/1611840999494/front-left-side-47.jpg",
+        "seats": 5,
+        "miles": "8,500",
+        "features": [
+            "Autopilot",
+            "Long Range",
+            "Panoramic Roof"
+        ],
+        "description": "The Tesla Model S is an electric sedan known for its long-range capabilities, advanced autopilot features, and sleek design."
+    },
+    {
+        "id": 5,
+        "name": "BMW M5",
+        "price": "104,500",
+        "url": "https://imgd.aeplcdn.com/664x374/n/cw/ec/50723/m5-exterior-right-front-three-quarter-2.jpeg?q=80",
+        "seats": 5,
+        "miles": "20,000",
+        "features": [
+            "M Performance",
+            "Executive Package",
+            "Harman Kardon Sound System"
+        ],
+        "description": "The BMW M5 is a high-performance sedan that strikes a perfect balance between luxury and exhilarating driving dynamics."
+    }
+]

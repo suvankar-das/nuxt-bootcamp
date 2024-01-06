@@ -283,3 +283,93 @@ const error = useError();
     <div class="animate-bounce">
         ...
 ```
+
+
+----
+# Dynamic rendering of each car
+
+- First I have created a compsable named useCar
+``` js
+// import cars from '../data/cars.json';
+import cars from '@/data/cars.json';
+
+export const useCars = ()=>{
+    return {
+        cars
+    }
+}
+
+```
+
+ `Here @ meaning go to root`
+
+
+- Then , on cards.vue
+
+``` html
+<script setup>
+
+const {cars} = useCars();
+
+</script>
+
+
+<template>
+  <div>
+    <!-- Actual Car cards container  -->
+    <div class="w-full">
+      <!-- Individual car card start-->
+      <CarCard v-for="car in cars" :key="car.id" :carObj="car"/>
+      <!-- Actual Car cards container  end-->
+    </div>
+  </div>
+</template>
+
+```
+`:carObj="car": This is using the : shorthand for v-bind, a directive in Vue.js that binds an attribute to an expression. In this case, it's binding the prop named carObj`
+
+Now in CarCard,
+
+``` html
+<script setup>
+const props = defineProps({
+  carObj: Object,
+});
+
+const navigateToCarDetails = ()=>{
+  const routeUrl = `/car/${props.carObj.name}-${props.carObj.id}`;
+  navigateTo(routeUrl);
+}
+
+</script>
+
+<template>
+  <div>
+    <div
+      class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
+      @click="navigateToCarDetails"
+    >
+      <div class="flex h-full">
+        <img
+          :src="carObj.url"
+          alt="car image"
+          class="w-[300px] h-full"
+        />
+        <div class="p-4 flex flex-col">
+          <div>
+            <h1 class="text-2xl text-blue-700">{{ carObj?.name }}</h1>
+            <p class="text-green-700">
+              {{ carObj?.description }}
+            </p>
+          </div>
+          <div class="mt-auto text-xl">${{ carObj.price }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- Individual car card end-->
+  </div>
+</template>
+
+```
+
+`defineProps(['carObj']) is used to define and access the carObj prop `
