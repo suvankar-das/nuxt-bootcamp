@@ -105,3 +105,10 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
 ### `<input type="text" v-model="cityName" :class="isEmptySearch ? 'border border-red-900' : ''" />`
 
 -   **`v-model="cityName"`**: `v-model` is a directive in Vue.js that creates a two-way binding on an input element. In this case, it binds the value of the input field to the `cityName` variable. Any changes to the input field will update the value of `cityName`, and vice versa.
+
+----
+![enter image description here](https://i.ibb.co/MgWCfww/image.png)
+- Here In this page th right side of the page will gets changed frequently. i.e If I chnage any parameter like
+- change location or make then different cars will popped up on the right side of that screen.
+
+So what we need to do is change our routing structure so that the frequently chnaged portion will be a nested route.
