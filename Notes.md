@@ -112,3 +112,25 @@ When you use the `UserProfile.vue` component, Nuxt.js automatically recognizes i
 - change location or make then different cars will popped up on the right side of that screen.
 
 So what we need to do is change our routing structure so that the frequently chnaged portion will be a nested route.
+
+
+# Page Layout
+
+- To create a default layout , create a folder named layouts at the root
+- Inside that folder, create a file named default.vue
+
+``` html
+<template>
+  <div>
+    <NavBar />
+    <slot />
+  </div>
+</template>
+
+```
+
+- Then inside app.vue , wrap `<NuxtPage>` inside `<NuxtLayout>`
+
+``` html
+<NuxtLayout><NuxtPage></NuxtPage></NuxtLayout>
+```
