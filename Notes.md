@@ -262,3 +262,7 @@ definePageMeta({
 
 </script>
 ```
+
+-----
+# Error page
+- To add a error page , simply create a file named error.vue at the root
