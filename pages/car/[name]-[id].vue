@@ -1,8 +1,10 @@
 <script setup>
 const route = useRoute();
 
+const {capitalizeFirstLetter} = useUtilities();
+
 useHead({
-  title: route.params.name.toUpperCase(),
+  title: capitalizeFirstLetter(route.params.name),
 });
 
 definePageMeta({

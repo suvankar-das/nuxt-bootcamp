@@ -211,3 +211,54 @@ definePageMeta({
 </template>
 
 ```
+
+
+----
+
+# Composable
+So , in both car.vue and [name]-[id].vue , I am using a common function , which is responsible for returning first letter in capital.
+
+``` js
+const capitalizeFirstLetter = (str)=> {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+```
+
+Now , I can re-use this using composable.
+
+>In Nuxt.js, *composables* are a feature of the Composition API that allows you to organize and reuse logic across components. Composable is sort of places where we can store state as well as a different pieces of functionality.
+
+- First create a directory named composables,
+- Then create a file , here I give a name like useUtilities.js (all composables must begin with use)
+
+``` js
+export const useUtilities = ()=>{
+    const capitalizeFirstLetter = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    return {
+        capitalizeFirstLetter
+    }
+}
+
+```
+
+- Now in page , I am using it like this ,
+
+``` js
+<script setup>
+const route = useRoute();
+
+const {capitalizeFirstLetter} = useUtilities();
+
+useHead({
+  title: capitalizeFirstLetter(route.params.name),
+});
+
+definePageMeta({
+  layout:'central-aligned'
+})
+
+</script>
+```

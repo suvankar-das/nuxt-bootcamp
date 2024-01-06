@@ -1,11 +1,15 @@
 <script setup>
 const route = useRoute();
 
+const {capitalizeFirstLetter} = useUtilities();
+
 useHead({
   title: `${
-    route.params.maker ? route.params.maker.toUpperCase() : "Cars"
-  } in ${route.params.city.toUpperCase()}`,
+    route.params.maker ? capitalizeFirstLetter(route.params.maker) : "Cars"
+  } in ${capitalizeFirstLetter(route.params.city)}`,
 });
+
+
 
 definePageMeta({
   layout: "central-aligned",
