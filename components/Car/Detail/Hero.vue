@@ -8,7 +8,7 @@
     <div>
         <!-- CAR HERO start-->
         <div class="mt-10">
-          <img
+          <NuxtImg
             :src="carDetails.url"
             class="w-full"
             alt=""

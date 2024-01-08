@@ -21,7 +21,7 @@ const navigateToCarDetails = ()=>{
       @click="navigateToCarDetails"
     >
       <div class="flex h-full">
-        <img
+        <NuxtImg
           :src="carObj.url"
           alt="car image"
           class="w-[300px] h-full"

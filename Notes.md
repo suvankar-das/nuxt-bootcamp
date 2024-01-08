@@ -405,3 +405,18 @@ const catchAndNavigate = () => {
   });
 };
 ```
+----
+### Optimizing Image
+
+>npm install @nuxt/image
+
+- Inside nuxt.config.js
+``` js
+export default defineNuxtConfig({
+  modules: [
+    '@nuxt/image',
+  ]
+})
+```
+
+- Change all <img> with <NuxtImg>
