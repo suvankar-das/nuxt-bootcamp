@@ -373,3 +373,13 @@ const navigateToCarDetails = ()=>{
 ```
 
 `defineProps(['carObj']) is used to define and access the carObj prop `
+
+----
+- The computed function is part of the Vue Composition API and is used to create a reactive computation. Computed properties are derived from one or more reactive properties, and they automatically update when the dependencies change.
+
+``` js
+const car = computed(() => {
+  return cars.find(c => c.id === parseInt(route.params.id));
+});
+```
+- When you use computed, Vue.js optimizes the computation. It will only re-run the function when the dependencies (route.params.id in this case) change. This avoids unnecessary re-computation and helps in optimizing the performance of your application.
