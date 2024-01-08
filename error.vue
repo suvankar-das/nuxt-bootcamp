@@ -2,10 +2,15 @@
 
 const error = useError();
 
+const catchAndNavigate = () => {
+  clearError({
+    redirect: '/',
+  });
+};
 </script>
 
 <template>
-    <div class="text-center">
+  <div class="text-center">
     <h1 class="mb-4 text-6xl font-semibold text-red-500">{{ error.statusCode }}</h1>
     <p class="mb-4 text-lg text-gray-600">{{ error.message }}</p>
     <div class="animate-bounce">
@@ -13,6 +18,6 @@ const error = useError();
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
       </svg>
     </div>
-    <p class="mt-4 text-gray-600">Let's get you back <a @click="navigateTo('/')" class="text-blue-500">home</a>.</p>
+    <p class="mt-4 text-gray-600">Let's get you back <a @click="catchAndNavigate" class="text-blue-500">home</a>.</p>
   </div>
 </template>

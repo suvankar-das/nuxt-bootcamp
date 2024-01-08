@@ -383,3 +383,25 @@ const car = computed(() => {
 });
 ```
 - When you use computed, Vue.js optimizes the computation. It will only re-run the function when the dependencies (route.params.id in this case) change. This avoids unnecessary re-computation and helps in optimizing the performance of your application.
+
+
+----
+- create a server side error.
+``` js
+if(!car.value){
+  throw createError({
+    statusCode:404,
+    message:`Car with id ${route.params.id} does not exist!`
+  })
+}
+```
+Handle error
+```
+const error = useError();
+
+const catchAndNavigate = () => {
+  clearError({
+    redirect: '/',
+  });
+};
+```
