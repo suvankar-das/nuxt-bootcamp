@@ -17,6 +17,14 @@ const updateModal = () => {
   if (!cityName.value) {
     return;
   }
+
+  if(!isNaN(parseInt(cityName.value))){
+    throw createError({
+      statusCode:404,
+      message:'Not a valid city'
+    })
+  }
+
   toggleModal("location");
   navigateTo(`/city/${cityName.value}/car/${route.params.maker}`);
   cityName.value = "";
