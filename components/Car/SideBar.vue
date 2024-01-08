@@ -29,6 +29,11 @@ const updateModal = () => {
   navigateTo(`/city/${cityName.value}/car/${route.params.maker}`);
   cityName.value = "";
 };
+
+onMounted(() => {
+  cityName.value = route.params.city || "";
+});
+
 </script>
 
 <template>
@@ -43,8 +48,8 @@ const updateModal = () => {
           @click="toggleModal('location')"
           class="capitalize text-blue-400 font-bold"
         >
-          <!-- {{ cityName }} -->
-          kolkata
+          {{ cityName }}
+          <!-- Kolkata -->
         </h3>
 
         <!-- Modal Popup -->
