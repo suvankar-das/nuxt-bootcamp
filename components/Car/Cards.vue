@@ -13,8 +13,6 @@ const handleFavouriteCallfromChild = (id) => {
     };
   }
 };
-
-
 </script>
 
 
@@ -23,10 +21,15 @@ const handleFavouriteCallfromChild = (id) => {
     <!-- Actual Car cards container  -->
     <div class="w-full">
       <!-- Individual car card start-->
-      <CarCard v-for="car in cars" :key="car.id" :carObj="car"
-       @childCaller="handleFavouriteCallfromChild"
-       :isFavourite="car.id in favourite"
-       />
+      <ClientOnly>
+        <CarCard
+          v-for="car in cars"
+          :key="car.id"
+          :carObj="car"
+          @childCaller="handleFavouriteCallfromChild"
+          :isFavourite="car.id in favourite"
+        />
+      </ClientOnly>
       <!-- Actual Car cards container  end-->
     </div>
   </div>

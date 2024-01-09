@@ -471,3 +471,28 @@ const emit = defineEmits(['childCaller']);
       />
 ```
 - But there is one issue , after reload , all data gets lost.
+
+---
+- When you use localStorage in Nuxt.js or Vue.js, there are a few important considerations related to server-side rendering (SSR) that can affect the behavior of your application.
+
+1. localStorage in SSR:
+
+During the server-side rendering process, the localStorage object is not available. This is because SSR is executed on the server, and localStorage is a browser-specific feature.
+If you try to access localStorage directly during the server rendering of a component, it may lead to errors since the object is undefined.
+
+2. Client-Side Only Code:
+
+If your component relies on client-side features like localStorage or interacts with the DOM directly, you should ensure that this code is only executed on the client side.
+Wrapping the component or code with <ClientOnly> is a way to achieve this, as it prevents the enclosed content from being rendered during server-side rendering.
+
+``` js
+<ClientOnly>
+        <CarCard
+          v-for="car in cars"
+          :key="car.id"
+          :carObj="car"
+          @childCaller="handleFavouriteCallfromChild"
+          :isFavourite="car.id in favourite"
+        />
+      </ClientOnly>
+```
