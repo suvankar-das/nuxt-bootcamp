@@ -4,6 +4,7 @@ import heartOutlined from "@/assets/images/002-heartOutline.png";
 
 const props = defineProps({
   carObj: Object,
+  isFavourite:Boolean
 });
 
 const navigateToCarDetails = () => {
@@ -11,11 +12,10 @@ const navigateToCarDetails = () => {
   navigateTo(routeUrl);
 };
 
-// useState compasable is recommended than ref()
-// it take 2 param , uique key and function that will return initial value
-const favourite = useState(`favourite-${props.carObj.id}`, () => {
-  return false;
-});
+
+
+const emit = defineEmits(['childCaller']);
+
 </script>
 
 
@@ -26,8 +26,8 @@ const favourite = useState(`favourite-${props.carObj.id}`, () => {
     >
       <img
         class="absolute w-7 right-5 top-3 z-50"
-        :src="favourite ? heartFilled : heartOutlined"
-        @click="favourite = !favourite"
+        :src="props.isFavourite ? heartFilled : heartOutlined"
+        @click="emit('childCaller',carObj.id)"
       />
       <div class="flex h-full" @click="navigateToCarDetails">
         <NuxtImg :src="carObj.url" alt="car image" class="w-[300px] h-full" />

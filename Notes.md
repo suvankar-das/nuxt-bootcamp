@@ -420,3 +420,54 @@ export default defineNuxtConfig({
 ```
 
 - Change all <img> with <NuxtImg>
+
+
+-----
+### use vueuse composables
+
+> npm i @vueuse/nuxt
+
+``` js
+export default defineNuxtConfig({
+  modules: [
+    '@vueuse/nuxt',
+  ],
+})
+```
+
+- Now inside cards.vue (Parent)
+
+``` js
+const favourite = useLocalStorage("favourite", {});
+
+const handleFavouriteCallfromChild = (id) => {
+  if (id in favourite.value) {
+    delete favourite.value[id];
+  } else {
+    favourite.value = {
+      ...favourite.value,
+      [id]: true,
+    };
+  }
+};
+
+<CarCard v-for="car in cars" :key="car.id" :carObj="car"
+       @childCaller="handleFavouriteCallfromChild"
+       :isFavourite="car.id in favourite"
+       />
+```
+
+
+- Now in childpage
+
+``` js
+const emit = defineEmits(['childCaller']);
+
+
+<img
+        class="absolute w-7 right-5 top-3 z-50"
+        :src="props.isFavourite ? heartFilled : heartOutlined"
+        @click="emit('childCaller',carObj.id)"
+      />
+```
+- But there is one issue , after reload , all data gets lost.
