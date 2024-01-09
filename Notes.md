@@ -496,3 +496,27 @@ Wrapping the component or code with <ClientOnly> is a way to achieve this, as it
         />
       </ClientOnly>
 ```
+
+---
+### Authentication with superbase and postgr
+
+- install `npm install @nuxtjs/supabase@0.3.0`
+- add in config also
+```
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  modules:[
+    '@nuxtjs/supabase'
+  ]
+})
+
+```
+
+
+- Now after that , it will throw an error , to fix create a .env file and put it there
+``` env
+SUPABASE_URL = 'https://ddd.ddd'
+SUPABASE_KEY='ey'
+```
+from
+![enter image description here](https://i.ibb.co/y5MtCj6/image.png)
