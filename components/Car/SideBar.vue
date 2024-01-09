@@ -1,4 +1,6 @@
 <script setup>
+const { maker } = useCars();
+
 const modal = ref({
   location: false,
   make: false,
@@ -18,11 +20,11 @@ const updateModal = () => {
     return;
   }
 
-  if(!isNaN(parseInt(cityName.value))){
+  if (!isNaN(parseInt(cityName.value))) {
     throw createError({
-      statusCode:404,
-      message:'Not a valid city'
-    })
+      statusCode: 404,
+      message: "Not a valid city",
+    });
   }
 
   toggleModal("location");
@@ -30,16 +32,21 @@ const updateModal = () => {
   cityName.value = "";
 };
 
+const onMakerChanged = (make) => {
+  toggleModal("make");
+  navigateTo(`/city/${cityName.value}/car/${make}`);
+};
+
 onMounted(() => {
   cityName.value = route.params.city || "";
 });
-
 </script>
 
 <template>
   <div>
     <!-- Car side bar -->
     <div class="shadow border w-64 mr-10 z-30 h-[190px]">
+      <!-- Location start -->
       <div
         class="p-5 flex justify-between relative cursor-pointer custom-border-bottom"
       >
@@ -55,7 +62,7 @@ onMounted(() => {
         <!-- Modal Popup -->
         <div
           v-if="modal.location"
-          class="left-56 p-5 absolute border shadow top-1 -m-1 bg-white"
+          class="z-50 left-56 p-5 absolute border shadow top-1 -m-1 bg-white"
         >
           <input class="border p-1 rounded" type="text" v-model="cityName" />
           <button
@@ -67,17 +74,43 @@ onMounted(() => {
         </div>
       </div>
 
+      <!-- Location end -->
+
+      <!-- Make start -->
+
       <div
         class="p-5 flex justify-between relative cursor-pointer custom-border-bottom"
       >
         <h3>Make</h3>
-        <h3 class="capitalize text-blue-400 font-bold">Hyundai</h3>
+        <h3
+          class="capitalize text-blue-400 font-bold"
+          @click="toggleModal('make')"
+        >
+          {{ route.params.maker || "Any" }}
+        </h3>
+        <div
+          class="z-50 absolute border shadow left-56 p-5 -m-1 top-1 w-[600px] flex justify-between flex-wrap bg-white"
+          v-if="modal.make"
+        >
+          <h4
+            v-for="make in maker"
+            :key="make"
+            class="w-1/3 bg-white"
+            @click="onMakerChanged(make)"
+          >
+            {{ make }}
+          </h4>
+        </div>
       </div>
 
+      <!-- Make End -->
+
+      <!-- Price Start -->
       <div class="p-5 flex justify-between relative cursor-pointer">
         <h3>Price</h3>
         <h3 class="capitalize text-blue-400 font-bold">Any</h3>
       </div>
+      <!-- Price end -->
     </div>
 
     <!-- Car side bar end-->
