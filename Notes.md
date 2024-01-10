@@ -533,3 +533,18 @@ export default defineEventHandler((event)=>{
 ```
 
 - Now If You hit localhost:3000/api/cars/kolkata , it will return Hello
+
+---
+### extracting params
+
+``` js
+import cars from '@/data/cars.json'
+export default defineEventHandler((event)=>{
+    const {city} = event.context.params;
+    let filteredCar = cars;
+    filteredCar = filteredCar.filter((c)=>c.city.toLowerCase()==city.toLowerCase());
+    return filteredCar;
+})
+```
+
+- So if You put http://localhost:3000/api/cars/toronto , it will list all toronto cars and If You put http://localhost:3000/api/cars/kolkata , it will return []
