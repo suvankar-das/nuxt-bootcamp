@@ -520,3 +520,16 @@ SUPABASE_KEY='ey'
 ```
 from
 ![enter image description here](https://i.ibb.co/y5MtCj6/image.png)
+
+---
+### Creating server endpoint
+- First create a folder named api under server.
+- Then in order to call , /api/cars/{city_name}, create a folder named cars under api and then [city].js file under cars
+
+``` js
+export default defineEventHandler((event)=>{
+    return "Hello"
+})
+```
+
+- Now If You hit localhost:3000/api/cars/kolkata , it will return Hello
